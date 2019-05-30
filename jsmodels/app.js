@@ -575,7 +575,7 @@
         }
 
         //$http.post('datas/correlation-map', {
-        $http.post('https://10.78.147.28:8443/correlation-map?minConfidence=0.7&isOnlyCrossCategory=false', {
+        $http.post('https://capcom.southeastasia.cloudapp.azure.com:8443/correlation-map?minConfidence=0.7&isOnlyCrossCategory=false', {
         }, {
                 headers: {
                     "Account": '****',
