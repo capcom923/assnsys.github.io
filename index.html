@@ -1,0 +1,118 @@
+﻿
+
+
+<!DOCTYPE html>
+<html ng-controller="correlationApp">
+
+<head>
+    <title>Correlation Analytics</title>
+
+    <!-- Meta informations -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="IE=edge">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+
+    <style type="text/css">
+        .modal-document {
+            height: 90vh;
+            max-height: 90vh;
+            min-height: 90vh;
+            height: calc(var(--vh, 1vh) * 90);
+            max-height: calc(var(--vh, 1vh) * 90);
+            min-height: calc(var(--vh, 1vh) * 90);
+
+            width: 90vw;
+            max-width: 90vw;
+            min-width: 90vw;
+            width: calc(var(--vw, 1vw) * 90);
+            max-width: calc(var(--vw, 1vw) * 90);
+            min-width: calc(var(--vw, 1vw) * 90);
+            
+            position: relative;
+            margin: 0px;
+        }
+
+        .modal-document>.modal-content {
+            position: relative;
+            background-color: #fff;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            border: 0px solid #999;
+            border: 0px solid rgba(0, 0, 0, .2);
+            border-radius: 0px;
+            outline: 0;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            height: 100%;
+        }
+
+        .modal-open .modal {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .modal-header.thin {
+            padding: 5px 15px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .modal-body-thin {
+            position: relative;
+            padding: 12px;
+            margin: 0px;
+        }
+
+        .modal-body-lg {
+            height: 60vh;
+            max-height: 60vh;
+            min-height: 60vh;
+        }
+
+        .modal-footer.thin {
+            padding: 5px 15px 5px 15px;
+            text-align: right;
+            border-top: 1px solid #e5e5e5;
+        }
+
+    </style>
+
+    <script type="text/ng-template" id="uib-template-modal-window-template">
+        <div class="modal-dialog modal-document">
+            <div class="modal-content" uib-modal-transclude>
+    
+            </div>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="app-modal-dialog-template">
+        <div style="height: 100%; display: flex; flex-direction: column;">
+            <div class="modal-header thin" style="flex-grow: 0;">
+                <p class="modal-title" id="modal-title-app-modal">Correlation analytics</p>
+            </div>
+            <div ng-include="template" class="modal-body modal-body-thin" style="flex-grow: 1; padding: 5px;" id="modal-body-app-modal">
+                
+            </div>
+            <div class="modal-footer thin" style="flex-grow: 0;" ng-if="!nofooter">
+                <button class="btn btn-primary" type="button" ng-click="ok()">确定</button>
+                <button ng-if="!$setting.nocancel" class="btn btn-warning" type="button" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="correlation-tree-dialog">        
+        <div correlation-tree rules="corRules" style="height: 100%; width: 100%;">
+        
+        </div>
+    </script>
+
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div correlation-map rules="corRules" style="height: 100vh; width: 100vw;"></div>
+
+    <script src="jslibs/require-2.3.5.js" data-main="jsmodels/main" defer async="true"></script>
+</body>
+
+</html>
