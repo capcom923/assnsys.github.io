@@ -2,7 +2,6 @@
 
 (function (win) {
     require.config({
-        baseUrl: '',
         waitSeconds: 20,
         map: {
             '*': {
