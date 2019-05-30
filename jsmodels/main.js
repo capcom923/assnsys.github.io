@@ -5,7 +5,7 @@
         waitSeconds: 20,
         map: {
             '*': {
-                css: '../jslibs/css.js',
+                css: 'jslibs/css.js',
                 text: '../jslibs/text.js',
                 template: '../jslibs/template.js'
             }
