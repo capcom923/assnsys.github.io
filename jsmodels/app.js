@@ -574,14 +574,7 @@
             return target;
         }
 
-        $http.post('map', {
-        }, {
-                headers: {
-                    "Account": '****',
-                    "Product": 'site2',
-                    "Content-Type": 'application/json',
-                }
-            }).then(function (corMap) {
+        $http.get('map').then(function (corMap) {
 
                 corMap = corMap.data;
 
