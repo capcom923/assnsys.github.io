@@ -574,7 +574,7 @@
             return target;
         }
 
-        $http.get('map').then(function (corMap) {
+        $http.get('jsmodels/map').then(function (corMap) {
 
                 corMap = corMap.data;
 
